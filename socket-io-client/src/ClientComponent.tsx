@@ -10,6 +10,7 @@ export default function ClientComponent() {
     const socket = socketIOClient(ENDPOINT);
     socket.on("FromAPI", (data: string) => {
       setResponse(data);
+      console.log(data);
     });
   }, []);
 
