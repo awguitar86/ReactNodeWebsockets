@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "path": "..\\..\\chat"
+    },
+    {
+      "path": "..\\..\\socket-io-client"
+    },
+    {
+      "path": "..\\..\\socket-io-server"
+    },
+    {
+      "path": ".."
+    },
+    {
+      "path": "..\\..\\websockets-server"
+    }
+  ]
+}

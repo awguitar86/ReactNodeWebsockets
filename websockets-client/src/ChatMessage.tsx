@@ -1,9 +1,14 @@
 import * as React from "react";
 
-export default function ChatMessage(name: string, message: string) {
+interface ChatMessageProps {
+  name: string;
+  message: string;
+}
+
+export default function ChatMessage(props: ChatMessageProps) {
   return (
     <p>
-      <strong>{name}</strong> <em>{message}</em>
+      <strong>{props.name}</strong> <em>{props.message}</em>
     </p>
   );
 }

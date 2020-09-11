@@ -1,15 +1,33 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 
-export default function ChatInput() {
+interface ChatInputProps {
+  ws: WebSocket;
+  onSubmitMessage: (messageString: string) => void;
+}
+
+export default function ChatInput(props: ChatInputProps) {
   const [message, setMessage] = React.useState("");
-  const propTypes = {
-    onSubmitMessage: PropTypes.func.isRequired,
+
+  const onSubmitMessage = () => {
+    console.log(message);
   };
 
   return (
-    <form action="">
-      <input type="text" />
+    <form
+      action="."
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSubmitMessage();
+        setMessage("");
+      }}
+    >
+      <input
+        type="text"
+        placeholder={"Enter message..."}
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+      />
+      <input type="submit" value={"Send"} />
     </form>
   );
 }
